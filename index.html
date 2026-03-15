@@ -15,102 +15,34 @@
       --color-text-success: #3b6d11;
       --color-border-tertiary: rgba(0,0,0,0.12);
       --color-border-secondary: rgba(0,0,0,0.22);
-      --color-border-primary: rgba(0,0,0,0.32);
       --border-radius-md: 8px;
       --border-radius-lg: 12px;
-      --border-radius-xl: 16px;
       --font-sans: system-ui, -apple-system, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-sans);
-      background: var(--color-background-tertiary);
-      color: var(--color-text-primary);
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    /* ── Layout ── */
+    body { font-family: var(--font-sans); background: var(--color-background-tertiary); color: var(--color-text-primary); padding: 2rem; min-height: 100vh; }
     .app { display: flex; flex-direction: column; gap: 1.25rem; }
-    .title-row { display: flex; align-items: center; gap: 10px; }
-    h1 { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
-
     .row { display: flex; gap: 1.5rem; }
-    .panel {
-      width: 230px; flex-shrink: 0;
-      background: var(--color-background-secondary);
-      border-radius: var(--border-radius-lg);
-      padding: 1rem 1.25rem;
-    }
+    .left-panel { width: 230px; flex-shrink: 0; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
     .chart-area { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1.25rem; }
-
-    /* ── Typography helpers ── */
-    .section-label {
-      font-size: 11px; font-weight: 500; color: var(--color-text-secondary);
-      margin: 0 0 .5rem; letter-spacing: .06em; text-transform: uppercase;
-    }
+    .section-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 .5rem; letter-spacing: .06em; text-transform: uppercase; }
     .section-desc { font-size: 12px; color: var(--color-text-secondary); margin: 0 0 .75rem; line-height: 1.45; }
     .row-between { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
     .lbl { font-size: 12px; color: var(--color-text-secondary); }
     .val { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
     .range-ends { display: flex; justify-content: space-between; font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; }
     .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 0 0 1rem; }
-    .ideal-note { font-size: 11px; color: var(--color-text-secondary); margin: 0; line-height: 1.4; flex: 1; }
-
-    /* ── Inputs ── */
     input[type="range"] { width: 100%; accent-color: #378ADD; margin-bottom: 1.25rem; }
-    input[type="number"] {
-      font-size: 12px; padding: 1px 4px;
-      border: 0.5px solid var(--color-border-secondary);
-      border-radius: 4px; background: var(--color-background-primary);
-      color: var(--color-text-primary);
-    }
-
-    /* ── Buttons ── */
-    button {
-      font-family: var(--font-sans); cursor: pointer;
-      border: 0.5px solid var(--color-border-secondary);
-      background: transparent; color: var(--color-text-secondary);
-      border-radius: 6px; padding: 5px 14px; font-size: 12px;
-    }
+    input[type="number"] { font-size: 12px; padding: 1px 4px; border: 0.5px solid var(--color-border-secondary); border-radius: 4px; background: var(--color-background-primary); color: var(--color-text-primary); }
+    button { font-family: var(--font-sans); cursor: pointer; border: 0.5px solid var(--color-border-secondary); background: transparent; color: var(--color-text-secondary); border-radius: 6px; padding: 5px 14px; font-size: 12px; }
     button:hover { background: rgba(0,0,0,0.05); }
-    button:active { transform: scale(0.98); }
-
-    .btn-circle {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--color-background-secondary);
-      font-size: 12px; font-weight: 500;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; padding: 0; line-height: 1;
-    }
-    .btn-circle-sm {
-      width: 16px; height: 16px; border-radius: 50%;
-      font-size: 9px; font-weight: 500;
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 0; line-height: 1; flex-shrink: 0;
-    }
-    .btn-pill {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 10px; padding: 2px 8px 2px 6px;
-      border-radius: 20px; white-space: nowrap;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-    }
-    .btn-pill .qmark {
-      width: 14px; height: 14px; border-radius: 50%;
-      border: 0.5px solid currentColor;
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 9px; flex-shrink: 0;
-    }
-    .btn-apply {
-      font-size: 10px; padding: 2px 8px;
-      border-radius: 4px; flex-shrink: 0;
-    }
+    .btn-circle { width: 22px; height: 22px; border-radius: 50%; background: var(--color-background-secondary); font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0; line-height: 1; }
+    .btn-circle-sm { width: 16px; height: 16px; border-radius: 50%; font-size: 9px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; padding: 0; line-height: 1; flex-shrink: 0; }
+    .btn-pill { display: flex; align-items: center; gap: 5px; font-size: 10px; padding: 2px 8px 2px 6px; border-radius: 20px; white-space: nowrap; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .btn-pill .qmark { width: 14px; height: 14px; border-radius: 50%; border: 0.5px solid currentColor; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; }
     .ideal-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: .75rem; }
-
-    /* ── Charts ── */
-    .chart-block {}
+    .ideal-note { font-size: 11px; color: var(--color-text-secondary); margin: 0; line-height: 1.4; flex: 1; }
+    .btn-apply { font-size: 10px; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; }
     .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: .75rem; }
     .legend-item { display: flex; align-items: flex-start; gap: 6px; }
     .swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; flex-shrink: 0; margin-top: 5px; }
@@ -120,52 +52,22 @@
     .legend-sub:hover { border-bottom-color: #aaa; }
     .chart-wrap { position: relative; height: 240px; }
     .chart-xlabel { font-size: 11px; color: var(--color-text-secondary); margin: 6px 0 0; text-align: center; }
-    .legend-roc { display: flex; gap: 1.5rem; margin-bottom: .75rem; font-size: 12px; color: var(--color-text-secondary); }
-    .legend-roc span { display: flex; align-items: center; gap: 6px; }
-
-    /* ── Help panel ── */
-    .help-panel {
-      display: none; background: var(--color-background-secondary);
-      border-radius: var(--border-radius-lg); padding: 1rem 1.25rem;
-      border: 0.5px solid var(--color-border-tertiary);
-    }
-    .help-panel p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 .75rem; }
-    .help-panel p:last-child { margin: 0; }
-    .help-panel ul { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; margin: 0 0 .75rem; padding-left: 1.25rem; }
-    .help-panel a { color: var(--color-text-secondary); }
-    .help-panel strong { color: var(--color-text-primary); font-weight: 500; }
+    /* Yellow popup panels */
+    .yellow-panel { background: #fffbeb; border: 0.5px solid #f5d96b; border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+    .yellow-panel p { color: #5a4800; }
+    .yellow-panel .panel-title { font-size: 13px; font-weight: 500; color: #7a6000; margin: 0; }
+    .yellow-panel .close-x { color: #7a6000; }
+    .yellow-inline { background: #fffbeb; border: 0.5px solid #f5d96b; border-radius: var(--border-radius-md); padding: .625rem .75rem; margin-top: .75rem; display: none; }
+    .yellow-inline-title { font-size: 11px; font-weight: 500; color: #7a6000; margin: 0 0 .4rem; }
+    .yellow-inline p { font-size: 11px; color: #5a4800; margin: 0 0 .4rem; line-height: 1.5; }
+    .yellow-inline p:last-child { margin: 0; }
     .panel-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .75rem; }
-    .panel-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0; }
-    .close-x { font-size: 16px; color: var(--color-text-secondary); cursor: pointer; line-height: 1; padding: 0 2px; background: none; border: none; font-family: inherit; }
-
-    /* ── SnNout / SpPin popups ── */
-    .popup-panel {
-      display: none; background: var(--color-background-primary);
-      border-radius: var(--border-radius-lg); padding: 1rem 1.25rem;
-      border: 0.5px solid var(--color-border-secondary);
-    }
-    .popup-panel p { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 .75rem; }
-    .popup-panel p:last-child { margin: 0; }
-    .popup-panel strong { color: var(--color-text-primary); font-weight: 500; }
-    .verdict {
-      display: none; font-size: 12px; font-weight: 500;
-      padding: .5rem .75rem; border-radius: var(--border-radius-md);
-      background: var(--color-background-success); color: var(--color-text-success);
-      line-height: 1.6;
-    }
-
-    /* ── Metrics box ── */
-    .metrics-box {
-      background: var(--color-background-secondary);
-      border-radius: var(--border-radius-lg); padding: 1rem 1.25rem;
-    }
+    .close-x { font-size: 16px; cursor: pointer; line-height: 1; padding: 0 2px; background: none; border: none; font-family: inherit; }
+    /* Metric cards */
+    .metrics-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 10px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
-    .metric-card {
-      background: var(--color-background-primary);
-      border-radius: var(--border-radius-md); padding: .75rem 1rem;
-      border: 0.5px solid var(--color-border-tertiary); display: flex; flex-direction: column;
-    }
+    .metric-card { background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: .75rem 1rem; border: 0.5px solid var(--color-border-tertiary); display: flex; flex-direction: column; }
     .metric-header { display: flex; justify-content: space-between; align-items: center; height: 32px; }
     .metric-name { font-size: 11px; color: var(--color-text-secondary); margin: 0; }
     .metric-name-tall { font-size: 11px; color: var(--color-text-secondary); margin: 0; height: 32px; display: flex; align-items: flex-start; }
@@ -173,83 +75,61 @@
     .metric-formula { font-size: 10px; color: var(--color-text-secondary); margin: 4px 0; }
     .metric-desc { font-size: 10px; color: var(--color-text-secondary); margin: 0 0 6px; line-height: 1.4; }
     .metric-extra { font-size: 10px; color: var(--color-text-secondary); margin: 0; line-height: 1.4; }
-
-    /* ── Table ── */
-    .table-title { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 .5rem; letter-spacing: .06em; text-transform: uppercase; }
+    /* Table */
     .table-row { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: nowrap; }
     table { border-collapse: collapse; font-size: 12px; table-layout: fixed; width: 280px; }
     th, td { border: 0.5px solid var(--color-border-secondary); padding: 6px 10px; }
     th { font-weight: 500; color: var(--color-text-secondary); background: var(--color-background-primary); }
     td.row-head { font-weight: 500; color: var(--color-text-secondary); background: var(--color-background-primary); width: 70px; }
     td.data { color: var(--color-text-primary); text-align: center; }
-    td.total { color: var(--color-text-secondary); text-align: center; }
-
-    /* ── Dot grid ── */
+    td.total-cell { color: var(--color-text-secondary); text-align: center; }
+    /* Dots */
     .dot-area { flex: 1; min-width: 0; }
     #dotGrid { display: grid; grid-template-columns: repeat(20, 14px); gap: 3px; margin-bottom: 10px; }
     .dot-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 10px; color: var(--color-text-secondary); }
     .dot-legend span { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
     .dot-swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-    .dot-note { font-size: 10px; color: var(--color-text-secondary); margin: 6px 0 0; }
-
-    /* ── Summary box ── */
-    .summary-box {
-      background: var(--color-background-secondary);
-      border-radius: var(--border-radius-lg); padding: 1rem 1.25rem;
-    }
+    /* Summary */
+    .summary-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
     .summary-header { display: flex; align-items: center; gap: 8px; margin-bottom: .875rem; flex-wrap: wrap; }
     .summary-body { display: flex; flex-direction: column; gap: .625rem; }
     .sum-text { font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.6; }
-    .sum-verdict {
-      display: none; font-size: 13px; font-weight: 500; margin: 0; line-height: 1.6;
-      padding: .5rem .75rem; border-radius: var(--border-radius-md);
-      background: var(--color-background-success); color: var(--color-text-success);
-    }
+    .sum-verdict { display: none; font-size: 13px; font-weight: 500; margin: 0; line-height: 1.6; padding: .5rem .75rem; border-radius: var(--border-radius-md); background: var(--color-background-success); color: var(--color-text-success); }
     .sum-limited { display: none; flex-direction: column; gap: .5rem; }
     .sum-limited-line { font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.6; }
-    .advice {
-      font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.7;
-      padding-left: .75rem; border-left: 2px solid var(--color-border-tertiary);
-    }
-    .threshold-note { display: none; font-size: 12px; color: var(--color-text-secondary); }
-    .threshold-val { font-weight: 500; color: var(--color-text-primary); cursor: pointer; border-bottom: 1px dotted var(--color-border-secondary); }
-
-    /* ── Footer ── */
+    .advice { font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.7; padding-left: .75rem; border-left: 2px solid var(--color-border-tertiary); }
+    /* Footer */
     .footer { display: flex; align-items: flex-end; justify-content: space-between; padding-top: .25rem; }
-    .footer-credit { font-size: 11px; color: var(--color-text-secondary); text-align: right; }
-    .footer-credit a { color: var(--color-text-secondary); }
-    .footer-version { font-size: 11px; color: var(--color-text-secondary); margin: 2px 0 0; }
+    .footer-right { text-align: right; }
+    .footer-right p { font-size: 11px; color: var(--color-text-secondary); margin: 0; }
+    .footer-right p + p { margin-top: 2px; }
+    .footer-right a { color: var(--color-text-secondary); }
   </style>
 </head>
 <body>
 <div class="app">
 
-  <!-- Title -->
-  <div class="title-row">
-    <h1>Diagnostic Test Explorer</h1>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <h1 style="font-size:18px;font-weight:500;color:var(--color-text-primary);margin:0;">Diagnostic Test Explorer</h1>
     <button class="btn-circle" onclick="toggleHelp()">?</button>
   </div>
 
-  <!-- Help panel -->
-  <div class="help-panel" id="helpPanel">
+  <div id="helpPanel" class="yellow-panel" style="display:none;">
     <div class="panel-header">
-      <p class="panel-title" style="margin:0;">About this tool</p>
-      <button class="close-x" onclick="toggleHelp()">&times;</button>
+      <p class="panel-title">About this tool</p>
+      <button class="close-x" onclick="toggleHelp()" style="color:#7a6000;">&times;</button>
     </div>
-    <p>There is a test with scores ranging from 0 to 200. This tool allows you to explore how that test can be used to diagnose people with a disease. Play with the sliders to visualize:</p>
-    <ul>
-      <li>How people with and without the disease score on the test. <strong>Severity</strong> is how differently these populations score on average.</li>
-      <li>How setting a diagnostic <strong>cutoff</strong> on the test changes its accuracy.</li>
-      <li>How <strong>prevalence</strong> of the disease changes confidence in the results.</li>
+    <p style="font-size:13px;margin:0 0 .75rem;line-height:1.6;">There is a test with scores ranging from 0 to 200. This tool allows you to explore how that test can be used to diagnose people with a disease. Play with the sliders to visualize:</p>
+    <ul style="font-size:13px;margin:0 0 .75rem;padding-left:1.25rem;line-height:1.7;">
+      <li>How people with and without the disease score on the test. <strong style="color:#3a2800;font-weight:500;">Severity</strong> is how differently these populations score on average.</li>
+      <li>How setting a diagnostic <strong style="color:#3a2800;font-weight:500;">cutoff</strong> on the test changes its accuracy.</li>
+      <li>How <strong style="color:#3a2800;font-weight:500;">prevalence</strong> of the disease changes confidence in the results.</li>
     </ul>
-    <p>Click around for some hidden features. Created by Mike Battista using Claude. <a href="https://www.mikebattista.com" target="_blank">www.mikebattista.com</a></p>
+    <p style="font-size:13px;margin:0;line-height:1.6;">Click around for some hidden features. This works best on a big screen, or at least in landscape. Created by Mike Battista using Claude. <a href="https://www.mikebattista.com" target="_blank" style="color:#5a4800;">www.mikebattista.com</a></p>
   </div>
 
-  <!-- Main layout -->
   <div class="row">
-
-    <!-- Left panel -->
-    <div class="panel">
+    <div class="left-panel">
       <p class="section-label">Disease severity</p>
       <p class="section-desc">How much lower do people with the disease score on the diagnostic test, on average? This also represents how precisely the test can measure disease characteristics.</p>
       <div class="row-between"><span class="lbl">Mean difference</span><span class="val" id="severityVal">20</span></div>
@@ -257,7 +137,6 @@
       <input type="range" id="severity" min="0" max="60" value="20" step="1">
 
       <hr class="divider">
-
       <p class="section-label">Diagnostic cutoff</p>
       <p class="section-desc">Scores at or below the cutoff are a positive result (conclude that the patient has the disease).</p>
       <div class="ideal-row">
@@ -269,7 +148,6 @@
       <input type="range" id="cutoff" min="0" max="200" value="90" step="1">
 
       <hr class="divider">
-
       <p class="section-label">Prevalence</p>
       <p class="section-desc">The percentage of people in the population being tested who have the disease.</p>
       <div class="row-between"><span class="lbl">Prevalence</span><span class="val" id="prevVal">50%</span></div>
@@ -277,9 +155,8 @@
       <input type="range" id="prevalence" min="0" max="100" value="50" step="1" style="margin-bottom:0;">
     </div>
 
-    <!-- Charts -->
     <div class="chart-area">
-      <div class="chart-block">
+      <div>
         <div class="legend">
           <span class="legend-item">
             <span class="swatch" style="background:#378ADD;"></span>
@@ -297,19 +174,15 @@
               <span id="dLegendEdit" style="display:none;font-size:10px;">M=<input id="inp-dm" type="number" min="0" max="200" step="1" value="80" style="width:36px;"> SD=<input id="inp-ds" type="number" min="1" max="60" step="1" value="15" style="width:30px;"> <span onclick="commitEditor('disease')" style="cursor:pointer;color:var(--color-text-secondary);">✓</span></span>
             </span>
           </span>
-          <span class="legend-item">
-            <span class="swatch-dash"></span>
-            <span class="legend-label">Cutoff</span>
-          </span>
+          <span class="legend-item"><span class="swatch-dash"></span><span class="legend-label">Cutoff</span></span>
         </div>
         <div class="chart-wrap"><canvas id="distChart"></canvas></div>
         <p class="chart-xlabel">Test score</p>
       </div>
-
-      <div class="chart-block">
-        <div class="legend-roc">
-          <span><span class="swatch" style="background:#639922;margin-top:0;"></span>ROC curve</span>
-          <span><span class="dot-swatch" style="background:#D85A30;"></span>Current cutoff</span>
+      <div>
+        <div style="display:flex;gap:1.5rem;margin-bottom:.75rem;font-size:12px;color:var(--color-text-secondary);">
+          <span style="display:flex;align-items:center;gap:6px;"><span class="swatch" style="background:#639922;margin-top:0;"></span>ROC curve</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span class="dot-swatch" style="background:#D85A30;"></span>Current cutoff</span>
         </div>
         <div class="chart-wrap"><canvas id="rocChart"></canvas></div>
         <p class="chart-xlabel">1 – Specificity (false positive rate)</p>
@@ -317,56 +190,40 @@
     </div>
   </div>
 
-  <!-- SnNout popup -->
-  <div class="popup-panel" id="snnoutPanel">
-    <div class="panel-header">
-      <p class="panel-title">SnNout</p>
-      <button class="close-x" onclick="document.getElementById('snnoutPanel').style.display='none'">&times;</button>
-    </div>
-    <p>High <strong>s</strong>e<strong>n</strong>sitivity (Sn), when <strong>n</strong>egative (N), rules <strong>out</strong> the disease (out).</p>
-    <p id="snnout-body"></p>
-    <p class="verdict" id="snnout-verdict"></p>
-  </div>
-
-  <!-- SpPin popup -->
-  <div class="popup-panel" id="spinPanel">
-    <div class="panel-header">
-      <p class="panel-title">SpPin</p>
-      <button class="close-x" onclick="document.getElementById('spinPanel').style.display='none'">&times;</button>
-    </div>
-    <p>High <strong>sp</strong>ecificity (Sp), when <strong>p</strong>ositive (P), rules <strong>in</strong> the disease (in).</p>
-    <p id="spin-body"></p>
-    <p class="verdict" id="spin-verdict"></p>
-  </div>
-
-  <!-- Metrics -->
   <div class="metrics-box">
     <p class="section-label">Diagnostic metrics</p>
-
     <div class="grid-3">
       <div class="metric-card">
         <div class="metric-header">
           <p class="metric-name">Sensitivity</p>
-          <button id="snnoutBtn" class="btn-pill" onclick="togglePanel('snnout')">
-            <span class="qmark">?</span>SnNout
-          </button>
+          <button id="snnoutBtn" class="btn-pill" onclick="togglePanel('snnout')"><span class="qmark">?</span>SnNout</button>
         </div>
         <p class="metric-val" id="m-sens">—</p>
         <p class="metric-formula">TP / (TP+FN)</p>
         <p class="metric-desc">Rate of correct positive results among those with disease</p>
         <p class="metric-extra">False negative rate = <span id="m-fnr">—</span></p>
+        <div class="yellow-inline" id="snnoutInline">
+          <p class="yellow-inline-title">SnNout</p>
+          <p>High <strong>s</strong>e<strong>n</strong>sitivity (Sn), when <strong>n</strong>egative (N), rules <strong>out</strong> the disease (out).</p>
+          <p id="snnout-body"></p>
+          <p id="snnout-verdict" style="display:none;font-weight:500;color:#3b6d11;"></p>
+        </div>
       </div>
       <div class="metric-card">
         <div class="metric-header">
           <p class="metric-name">Specificity</p>
-          <button id="spinBtn" class="btn-pill" onclick="togglePanel('spin')">
-            <span class="qmark">?</span>SpPin
-          </button>
+          <button id="spinBtn" class="btn-pill" onclick="togglePanel('spin')"><span class="qmark">?</span>SpPin</button>
         </div>
         <p class="metric-val" id="m-spec">—</p>
         <p class="metric-formula">TN / (TN+FP)</p>
         <p class="metric-desc">Rate of correct negative results among those without disease</p>
         <p class="metric-extra">False positive rate = <span id="m-fpr">—</span></p>
+        <div class="yellow-inline" id="spinInline">
+          <p class="yellow-inline-title">SpPin</p>
+          <p>High <strong>sp</strong>ecificity (Sp), when <strong>p</strong>ositive (P), rules <strong>in</strong> the disease (in).</p>
+          <p id="spin-body"></p>
+          <p id="spin-verdict" style="display:none;font-weight:500;color:#3b6d11;"></p>
+        </div>
       </div>
       <div class="metric-card">
         <p class="metric-name-tall">Balanced Accuracy</p>
@@ -375,45 +232,22 @@
         <p class="metric-desc">Average accuracy across both groups; useful when classes are unequal</p>
       </div>
     </div>
-
     <div class="grid-4">
-      <div class="metric-card">
-        <p class="metric-name-tall">PPV</p>
-        <p class="metric-val" id="m-ppv">—</p>
-        <p class="metric-formula">TP / (TP+FP)</p>
-        <p class="metric-desc">Probability the patient has disease given a positive test</p>
-      </div>
-      <div class="metric-card">
-        <p class="metric-name-tall">NPV</p>
-        <p class="metric-val" id="m-npv">—</p>
-        <p class="metric-formula">TN / (TN+FN)</p>
-        <p class="metric-desc">Probability the patient is disease-free given a negative test</p>
-      </div>
-      <div class="metric-card">
-        <p class="metric-name-tall">LR+</p>
-        <p class="metric-val" id="m-lrp">—</p>
-        <p class="metric-formula">Sens / (1−Spec)</p>
-        <p class="metric-desc">How much a positive result increases the odds of disease</p>
-      </div>
-      <div class="metric-card">
-        <p class="metric-name-tall">LR−</p>
-        <p class="metric-val" id="m-lrn">—</p>
-        <p class="metric-formula">(1−Sens) / Spec</p>
-        <p class="metric-desc">How much a negative result decreases the odds of disease</p>
-      </div>
+      <div class="metric-card"><p class="metric-name-tall">NPV</p><p class="metric-val" id="m-npv">—</p><p class="metric-formula">TN / (TN+FN)</p><p class="metric-desc">Probability the patient is disease-free given a negative test</p></div>
+      <div class="metric-card"><p class="metric-name-tall">PPV</p><p class="metric-val" id="m-ppv">—</p><p class="metric-formula">TP / (TP+FP)</p><p class="metric-desc">Probability the patient has disease given a positive test</p></div>
+      <div class="metric-card"><p class="metric-name-tall">LR−</p><p class="metric-val" id="m-lrn">—</p><p class="metric-formula">(1−Sens) / Spec</p><p class="metric-desc">How much a negative result decreases the odds of disease</p></div>
+      <div class="metric-card"><p class="metric-name-tall">LR+</p><p class="metric-val" id="m-lrp">—</p><p class="metric-formula">Sens / (1−Spec)</p><p class="metric-desc">How much a positive result increases the odds of disease</p></div>
     </div>
 
-    <p class="table-title">Results per 1,000 patients</p>
+    <p class="section-label">Results per 1,000 patients</p>
     <div class="table-row">
       <div style="flex-shrink:0;">
         <table>
-          <thead><tr>
-            <th></th><th>Disease+</th><th>Disease−</th><th>Total</th>
-          </tr></thead>
+          <thead><tr><th></th><th>Disease+</th><th>Disease−</th><th>Total</th></tr></thead>
           <tbody>
-            <tr><td class="row-head">Test+</td><td class="data" id="t-tp">—</td><td class="data" id="t-fp">—</td><td class="total" id="t-tp-tot">—</td></tr>
-            <tr><td class="row-head">Test−</td><td class="data" id="t-fn">—</td><td class="data" id="t-tn">—</td><td class="total" id="t-tn-tot">—</td></tr>
-            <tr><td class="row-head">Total</td><td class="total" id="t-d-tot">—</td><td class="total" id="t-h-tot">—</td><td class="total">1000</td></tr>
+            <tr><td class="row-head">Test+</td><td class="data" id="t-tp">—</td><td class="data" id="t-fp">—</td><td class="total-cell" id="t-tp-tot">—</td></tr>
+            <tr><td class="row-head">Test−</td><td class="data" id="t-fn">—</td><td class="data" id="t-tn">—</td><td class="total-cell" id="t-tn-tot">—</td></tr>
+            <tr><td class="row-head">Total</td><td class="total-cell" id="t-d-tot">—</td><td class="total-cell" id="t-h-tot">—</td><td class="total-cell">1000</td></tr>
           </tbody>
         </table>
       </div>
@@ -425,25 +259,26 @@
           <span><span class="dot-swatch" style="background:#0C447C;"></span>Disease−, Test+ (FP)</span>
           <span><span class="dot-swatch" style="background:#85B7EB;"></span>Disease−, Test− (TN)</span>
         </div>
-        <p class="dot-note">Each dot = 10 patients</p>
+        <p style="font-size:10px;color:var(--color-text-secondary);margin:6px 0 0;">Each dot = 10 patients</p>
       </div>
     </div>
   </div>
 
-  <!-- Summary -->
   <div class="summary-box">
     <div class="summary-header">
       <p class="section-label" style="margin:0;">Summary</p>
       <button class="btn-circle-sm" onclick="toggleThresholdNote()">?</button>
-      <span class="threshold-note" id="thresholdNote">
-        Acceptable accuracy is
-        <span class="threshold-val" id="thresholdDisplay" onclick="startEditThreshold()" title="Click to change">85%</span>
+    </div>
+    <div id="thresholdNote" class="yellow-panel" style="display:none;border-radius:var(--border-radius-md);padding:.625rem .75rem;margin-bottom:.875rem;">
+      <p style="font-size:12px;margin:0 0 .5rem;line-height:1.6;">This summarizes the diagnostic value of the test. Really good results are highlighted, defined by an acceptable accuracy (applies to sensitivity, specificity, NPV, and PPV).</p>
+      <p style="font-size:12px;margin:0;line-height:1.6;">Acceptable accuracy is
+        <span id="thresholdDisplay" onclick="startEditThreshold()" title="Click to change" style="font-weight:500;color:#3a2800;cursor:pointer;border-bottom:1px dotted #b89a00;">85%</span>
         <span id="thresholdEditWrap" style="display:none;">
           <input id="thresholdInput" type="number" min="50" max="99" value="85" step="1" style="width:42px;font-size:12px;padding:1px 4px;margin:0 2px;">
-          <span style="font-size:12px;color:var(--color-text-secondary);">%</span>
-          <span onclick="commitThreshold()" style="cursor:pointer;font-size:12px;color:var(--color-text-secondary);margin-left:4px;">✓</span>
+          <span style="font-size:12px;color:#5a4800;">%</span>
+          <span onclick="commitThreshold()" style="cursor:pointer;font-size:12px;color:#5a4800;margin-left:4px;">✓</span>
         </span>
-      </span>
+      </p>
     </div>
     <div class="summary-body">
       <p class="sum-text" id="sum-snnout"></p>
@@ -454,39 +289,38 @@
         <p class="sum-limited-line" id="sum-limited-line"></p>
         <p class="advice" id="sum-sens-advice" style="display:none;"></p>
         <p class="advice" id="sum-spec-advice" style="display:none;"></p>
-        <p class="advice" id="sum-general-advice"></p>
+        <p class="advice" id="sum-general-advice" style="display:none;"></p>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <button onclick="resetDefaults()">Reset defaults</button>
-    <div>
-      <p class="footer-credit">Created by Claude AI with help from <a href="https://www.mikebattista.com" target="_blank">Mike Battista</a> in 2026</p>
-      <p class="footer-version" style="font-size:11px;color:var(--color-text-secondary);margin:2px 0 0;">Version 1.0, 2026-03-15</p>
+    <div class="footer-right">
+      <p>Created by Claude AI with help from <a href="https://www.mikebattista.com" target="_blank">Mike Battista</a> in 2026</p>
+      <p>Version 1.0, 2026-03-15</p>
     </div>
   </div>
 
-</div><!-- /.app -->
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-let HM=100, HS=15, DS=15;
+let HM=100,HS=15,DS=15;
 const DEFAULTS={severity:20,cutoff:90,prevalence:50,hm:100,hs:15,ds:15};
-const XMIN=0, XMAX=180;
+const XMIN=0,XMAX=180;
 const DOT_COLORS={TP:'#993C1D',FN:'#F5C4B3',FP:'#0C447C',TN:'#85B7EB'};
 let _sens=0,_spec=0,_npv='—',_ppv='—',_prev=0,_idealCutoff=90;
 let THRESHOLD=85;
 
 function toggleHelp(){const p=document.getElementById('helpPanel');p.style.display=p.style.display==='none'||p.style.display===''?'block':'none';}
-function toggleThresholdNote(){const n=document.getElementById('thresholdNote');n.style.display=n.style.display==='none'||n.style.display===''?'inline':'none';}
+function toggleThresholdNote(){const n=document.getElementById('thresholdNote');n.style.display=n.style.display==='none'||n.style.display===''?'block':'none';}
 function startEditThreshold(){document.getElementById('thresholdDisplay').style.display='none';document.getElementById('thresholdEditWrap').style.display='inline';const inp=document.getElementById('thresholdInput');inp.value=THRESHOLD;inp.focus();}
 function commitThreshold(){const v=Math.min(99,Math.max(50,parseInt(document.getElementById('thresholdInput').value)||85));THRESHOLD=v;document.getElementById('thresholdDisplay').textContent=v+'%';document.getElementById('thresholdDisplay').style.display='inline';document.getElementById('thresholdEditWrap').style.display='none';refreshPanels();}
 function applyIdealCutoff(){document.getElementById('cutoff').value=_idealCutoff;update();}
 
 function togglePanel(which){
-  const sn=document.getElementById('snnoutPanel'),sp=document.getElementById('spinPanel');
+  const sn=document.getElementById('snnoutInline'),sp=document.getElementById('spinInline');
   if(which==='snnout'){const o=sn.style.display==='block';sn.style.display=o?'none':'block';sp.style.display='none';}
   else{const o=sp.style.display==='block';sp.style.display=o?'none':'block';sn.style.display='none';}
   refreshPanels();
@@ -505,7 +339,6 @@ function refreshPanels(){
   const snV=document.getElementById('snnout-verdict');snV.textContent='This scenario has high sensitivity. Negative results rule out the disease.';snV.style.display=snOk?'block':'none';
   document.getElementById('spin-body').textContent=spBody;
   const spV=document.getElementById('spin-verdict');spV.textContent='This scenario has high specificity. Positive results rule in the disease.';spV.style.display=spOk?'block':'none';
-
   document.getElementById('sum-snnout').textContent=snBody;
   document.getElementById('sum-spin').textContent=spBody;
   const ssV=document.getElementById('sum-snnout-verdict');ssV.textContent='This scenario has high sensitivity. Negative results rule out the disease.';ssV.style.display=snOk?'block':'none';
@@ -520,19 +353,24 @@ function refreshPanels(){
     else ll.textContent='Positive results from this test have limited diagnostic value.';
 
     const sensEl=document.getElementById('sum-sens-advice');
-    if(!snOk){sensEl.textContent='Sensitivity is '+sensStr+', below the '+THRESHOLD+'% threshold. To increase sensitivity, lower the cutoff score to flag more patients as positive. Higher disease severity also helps by increasing the score gap between groups.';sensEl.style.display='block';}
-    else sensEl.style.display='none';
+    if(!snOk){
+      sensEl.textContent='Sensitivity is '+sensStr+', below the '+THRESHOLD+'% threshold. To increase sensitivity, raise the cutoff score so that more patients are flagged as positive. Higher disease severity also helps by increasing the score gap between groups.';
+      sensEl.style.display='block';
+    } else sensEl.style.display='none';
 
     const specEl=document.getElementById('sum-spec-advice');
-    if(!spOk){specEl.textContent='Specificity is '+specStr+', below the '+THRESHOLD+'% threshold. To increase specificity, raise the cutoff score to reduce false positives among healthy patients.';specEl.style.display='block';}
-    else specEl.style.display='none';
+    if(!spOk){
+      specEl.textContent='Specificity is '+specStr+', below the '+THRESHOLD+'% threshold. To increase specificity, lower the cutoff score to reduce false positives among healthy patients. Higher disease severity also helps by making the two populations easier to distinguish.';
+      specEl.style.display='block';
+    } else specEl.style.display='none';
 
     const tips=[];
     const npvLow=isNaN(npvNum)||npvNum<THRESHOLD,ppvLow=isNaN(ppvNum)||ppvNum<THRESHOLD;
     if(ppvLow&&_prev<0.3) tips.push('PPV rises with prevalence — testing in a higher-prevalence population would increase confidence in a positive result.');
     if(npvLow&&_prev>0.7) tips.push('NPV is higher when disease is uncommon — a negative result is more reassuring in lower-prevalence populations.');
-    tips.push('Increasing disease severity improves all metrics by making healthy and diseased populations easier to distinguish.');
-    const genEl=document.getElementById('sum-general-advice');genEl.textContent=tips.join(' ');genEl.style.display='block';
+    const genEl=document.getElementById('sum-general-advice');
+    if(tips.length){genEl.textContent=tips.join(' ');genEl.style.display='block';}
+    else genEl.style.display='none';
   } else limited.style.display='none';
 
   const snBtn=document.getElementById('snnoutBtn'),spBtn=document.getElementById('spinBtn');
@@ -554,7 +392,6 @@ const distChart=new Chart(document.getElementById('distChart').getContext('2d'),
   x:{type:'linear',min:XMIN,max:XMAX,ticks:{stepSize:10,font:{size:11},color:'#888',maxRotation:0},grid:{color:'rgba(128,128,128,0.1)'},border:{color:'rgba(128,128,128,0.2)'}},
   y:{title:{display:true,text:'Density',font:{size:11},color:'#888'},ticks:{font:{size:10},color:'#888',callback:v=>v.toFixed(3)},grid:{color:'rgba(128,128,128,0.1)'},border:{color:'rgba(128,128,128,0.2)'}}
 }}});
-
 const rocChart=new Chart(document.getElementById('rocChart').getContext('2d'),{type:'scatter',data:{datasets:[
   {data:[],borderColor:'#639922',backgroundColor:'transparent',showLine:true,pointRadius:0,borderWidth:2,tension:0},
   {data:[{x:0,y:0},{x:1,y:1}],borderColor:'rgba(128,128,128,0.35)',backgroundColor:'transparent',showLine:true,pointRadius:0,borderWidth:1,borderDash:[4,4],tension:0},
@@ -597,7 +434,7 @@ document.addEventListener('keydown',function(e){
     if(document.getElementById('thresholdEditWrap').style.display!=='none') commitThreshold();
   }
   if(e.key==='Escape'){
-    ['helpPanel','snnoutPanel','spinPanel'].forEach(id=>document.getElementById(id).style.display='none');
+    ['helpPanel','snnoutInline','spinInline','thresholdNote'].forEach(id=>document.getElementById(id).style.display='none');
     if(document.getElementById('thresholdEditWrap').style.display!=='none'){document.getElementById('thresholdDisplay').style.display='inline';document.getElementById('thresholdEditWrap').style.display='none';}
   }
 });
@@ -609,7 +446,6 @@ function update(){
   document.getElementById('leg-hm').textContent=HM;document.getElementById('leg-hs').textContent=HS;document.getElementById('leg-dm').textContent=dm;document.getElementById('leg-ds').textContent=DS;
   _idealCutoff=findIdealCutoff(dm);
   document.getElementById('ideal-cutoff-note').textContent='Highest balanced accuracy with cutoff '+_idealCutoff;
-
   const sens=normalCdf(cutoff,dm,DS),spec=1-normalCdf(cutoff,HM,HS);
   const fnr=1-sens,fpr=1-spec,bacc=(sens+spec)/2;
   let ppv='—',npv='—';
@@ -617,37 +453,29 @@ function update(){
   else if(prev>=1){ppv='100.0%';}else{npv='100.0%';}
   const lrp=fpr>0?sens/fpr:Infinity,lrn=spec>0?fnr/spec:Infinity;
   _sens=sens;_spec=spec;_npv=npv;_ppv=ppv;_prev=prev;
-
   document.getElementById('m-sens').textContent=pct(sens);document.getElementById('m-spec').textContent=pct(spec);document.getElementById('m-bacc').textContent=pct(bacc);
   document.getElementById('m-ppv').textContent=ppv;document.getElementById('m-npv').textContent=npv;
   document.getElementById('m-lrp').textContent=isFinite(lrp)?fmt2(lrp):'∞';document.getElementById('m-lrn').textContent=isFinite(lrn)?fmt2(lrn):'∞';
   document.getElementById('m-fnr').textContent=pct(fnr);document.getElementById('m-fpr').textContent=pct(fpr);
-
   const N=1000,D=Math.round(prev*N),H=N-D,TP=Math.round(sens*D),FN=D-TP,FP=Math.round(fpr*H),TN=H-FP;
   document.getElementById('t-tp').textContent=TP;document.getElementById('t-fp').textContent=FP;document.getElementById('t-fn').textContent=FN;document.getElementById('t-tn').textContent=TN;
   document.getElementById('t-tp-tot').textContent=TP+FP;document.getElementById('t-tn-tot').textContent=FN+TN;document.getElementById('t-d-tot').textContent=D;document.getElementById('t-h-tot').textContent=H;
-  updateDots(TP,FP,FN,TN);
-  refreshPanels();
-
+  updateDots(TP,FP,FN,TN);refreshPanels();
   const hd=[],dd=[];let ymax=0;
   for(let x=XMIN;x<=XMAX;x++){const hy=normalPdf(x,HM,HS),dy=normalPdf(x,dm,DS);hd.push({x,y:hy});dd.push({x,y:dy});if(hy>ymax)ymax=hy;if(dy>ymax)ymax=dy;}
   distChart.data.datasets[0].data=hd;distChart.data.datasets[1].data=dd;distChart.data.datasets[2].data=[{x:cutoff,y:0},{x:cutoff,y:ymax*1.08}];distChart.update('none');
-
   const roc=[];for(let c=0;c<=200;c++)roc.push({x:normalCdf(c,HM,HS),y:normalCdf(c,dm,DS)});roc.sort((a,b)=>a.x-b.x);
   rocChart.data.datasets[0].data=roc;rocChart.data.datasets[2].data=[{x:fpr,y:sens}];rocChart.update('none');
 }
 
 function resetDefaults(){
-  HM=DEFAULTS.hm;HS=DEFAULTS.hs;DS=DEFAULTS.ds;
-  THRESHOLD=85;
+  HM=DEFAULTS.hm;HS=DEFAULTS.hs;DS=DEFAULTS.ds;THRESHOLD=85;
   document.getElementById('thresholdDisplay').textContent='85%';
   document.getElementById('thresholdDisplay').style.display='inline';
   document.getElementById('thresholdEditWrap').style.display='none';
   document.getElementById('thresholdNote').style.display='none';
-  document.getElementById('severity').value=DEFAULTS.severity;
-  document.getElementById('cutoff').value=DEFAULTS.cutoff;
-  document.getElementById('prevalence').value=DEFAULTS.prevalence;
-  ['hLegendEdit','dLegendEdit'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('severity').value=DEFAULTS.severity;document.getElementById('cutoff').value=DEFAULTS.cutoff;document.getElementById('prevalence').value=DEFAULTS.prevalence;
+  ['hLegendEdit','dLegendEdit','snnoutInline','spinInline'].forEach(id=>document.getElementById(id).style.display='none');
   ['hLegendDisplay','dLegendDisplay'].forEach(id=>document.getElementById(id).style.display='inline');
   update();
 }
