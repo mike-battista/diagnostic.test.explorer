@@ -8,5 +8,8 @@ There is a test with scores ranging from 0 to 200. This tool allows you to explo
 
 Click around for some hidden features. Created by Mike Battista using Claude. www.mikebattista.com
 
+Version 1.2: Added Youden's Index to ROC curve. Added likelihood ratio information to summary. Added overall accuracy metric to 1000 patient card. Visual improvements.
+
 Version 1.1: Added AUC to the ROC curve.
+
 Version 1.0: Initial launch.
